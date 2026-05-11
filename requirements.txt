@@ -1,4 +1,3 @@
 fastapi
-uvicorn
 pymongo
-mongo-api
+uvicorn
