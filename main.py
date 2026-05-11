@@ -18,7 +18,7 @@ client = MongoClient(os.environ["MONGO_URI"])
 
 # client = MongoClient("mongodb://<usuario>:<contraseña>@157.253.236.88:8087")
 
-client = MongoClient("")
+
 
 # db = client["ISIS*******"]
 db = client["parranderos"]
@@ -31,7 +31,7 @@ def inicio():
 @app.get('/bares/{bar_id}/comentarios')
 def get_comentarios(bar_id: int):
     comentarios = list (
-        db ["conetarios_ bares"].find(
+        db ["comentarios_ bares"].find(
         {"bar_id": bar_id},
         {"_id": 0}
         )
