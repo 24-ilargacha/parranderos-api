@@ -60,7 +60,7 @@ def get_eventos(bar_id: int):
 
 # Debe insertar el evento en la colección 'eventos'
 # Recuerde agregar bar_id y fecha_creacion al documento antes de insertar
-@app.post('/bares/{bat_id}/eventos')
+@app.post('/bares/{bar_id}/eventos')
 def post_eventos(bar_id: int, datos: dict):
     datos['bar_id'] = bar_id 
     datos ['fecha_creacion'] = datetime.now().isoformart()
