@@ -21,7 +21,7 @@ client = MongoClient(os.environ["MONGO_URI"])
 
 
 # db = client["ISIS*******"]
-db = client["parranderos"]
+db = client["ISIS2304D06202610"]
 
 
 @app.get("/")
