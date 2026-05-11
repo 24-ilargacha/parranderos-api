@@ -17,6 +17,8 @@ app.add_middleware(
 client = MongoClient(os.environ["MONGO_URI"])
 
 # client = MongoClient("mongodb://<usuario>:<contraseña>@157.253.236.88:8087")
+client = MongoClient("mongodb:// ISIS2304D06202610:lfGdHorFygBi@157.253.236.88:8087")
+
 
 
 
