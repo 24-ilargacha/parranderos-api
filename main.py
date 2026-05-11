@@ -16,13 +16,8 @@ app.add_middleware(
 #os.environ para despliegue. Descomente cuando ya probó todo local.
 client = MongoClient(os.environ["MONGO_URI"])
 
-# client = MongoClient("mongodb://<usuario>:<contraseña>@157.253.236.88:8087")
-client = MongoClient("mongodb:// ISIS2304D06202610:lfGdHorFygBi@157.253.236.88:8087")
 
 
-
-
-# db = client["ISIS*******"]
 db = client["ISIS2304D06202610"]
 
 
@@ -33,7 +28,7 @@ def inicio():
 @app.get('/bares/{bar_id}/comentarios')
 def get_comentarios(bar_id: int):
     comentarios = list (
-        db ["comentarios_bares"].find(
+        db ["comentarios"].find(
         {"bar_id": bar_id},
         {"_id": 0}
         )
