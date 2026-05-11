@@ -31,7 +31,7 @@ def inicio():
 @app.get('/bares/{bar_id}/comentarios')
 def get_comentarios(bar_id: int):
     comentarios = list (
-        db ["comentarios_ bares"].find(
+        db ["comentarios_bares"].find(
         {"bar_id": bar_id},
         {"_id": 0}
         )
@@ -42,7 +42,7 @@ def get_comentarios(bar_id: int):
 def post_comentario(bar_id: int, datos: dict):
     datos['bar_id'] = bar_id
     datos['fecha']  = datetime.now().isoformat()
-    db ["cometarios_bares"].insert_one(datos)
+    db ["comentarios_bares"].insert_one(datos)
     return {'mensaje': 'Comentario guardado'}
 
 
@@ -63,6 +63,6 @@ def get_eventos(bar_id: int):
 @app.post('/bares/{bar_id}/eventos')
 def post_eventos(bar_id: int, datos: dict):
     datos['bar_id'] = bar_id 
-    datos ['fecha_creacion'] = datetime.now().isoformart()
+    datos ['fecha_creacion'] = datetime.now().isoformat()
     db['eventos'].insert_one(datos)
     return {'mesaje': 'Eventos guardado'}
